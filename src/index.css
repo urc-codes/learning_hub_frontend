@@ -1,0 +1,287 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  /* overflow-x: hidden; */
+}
+.container-fluid{
+  height: 8vh;
+  background-color: beige;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo{
+  width: 50px;
+  height: 50px;
+}
+nav{
+  bottom: 0;
+   left: 0; 
+  width: 100%;
+}
+nav ul{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  list-style-type: none;
+ 
+}
+nav li{
+  color: #777;
+  cursor: pointer;
+  margin-right: 20px;
+  padding: 10px;
+  text-align: center;
+}
+nav ul li p{
+  font-size: 12px;
+  margin: 2px 0;
+}
+nav ul li .fa-house, .fa-list, .fa-eye, .fa-binoculars, .fa-wand-magic-sparkles{
+  display: none;
+}
+nav ul li:hover,
+nav ul li.active{
+  color: #0004ff;
+}
+@media screen and (max-width:929px){
+  nav{
+      height: 60px;
+      position: fixed;
+      z-index: 9999;
+      background-color: beige;
+      display: none;
+  }
+  nav ul{
+      justify-content: space-evenly;
+      align-items: center;
+  }
+  nav ul li .fa-house, .fa-list, .fa-eye, .fa-binoculars, .fa-wand-magic-sparkles{
+    display: inline;
+  }
+  nav ul li p{
+    display: none;
+  }
+}
+@media screen and (max-width:424px){
+  .container-fluid{
+    background-color:beige;
+  }
+   .search-btn{
+    display: none;
+  }
+}
+
+.search-input{
+  padding: 0 10px 0 10px;  
+}
+.search-input input{
+  width: 70%;
+  border-radius: 5px;
+  border: none;
+  height: 35px;
+  padding: 10px;
+  margin-right: 10px;
+}
+/* end of css for navbar */
+
+
+/* start of css for hompage */
+.wel{
+  /* box-shadow: 1px 1px 5px 1px rgb(83, 83, 83); */
+  margin-bottom: 2px;
+}
+.welcome{
+  min-height: 50vh;
+  display: flex;
+}
+.intro-texts{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 55vh;
+  padding: 10px;
+}
+
+@media screen and (max-width:744px){
+  .welcome{
+    flex-direction: column;
+  }
+  .intro-texts{
+    height: 35vh;
+  }
+  .d-model{
+    height: 45vh;
+  }
+}
+/* css end for homepage */
+
+/* css start for the recently view component */
+
+.featured_book_boks{
+  width: 100%;
+  height: 100vh;
+  padding: 70px 0;
+}
+
+.featured_boks h1{
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  margin-top: 5px;
+}
+
+.featured_boks .featured_book_box{
+  width: 100%;
+  height: 50vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+.featured_boks .featured_book_box .featured_book_card{
+  width: 250px;
+  height: 420px;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #919191;
+  margin: auto 10px;
+}
+
+.featured_boks .featured_book_box .featured_book_card:hover{
+  box-shadow: 0 0 5px #089da1;
+}
+
+.featured_boks .featured_book_box .featured_book_card .featurde_book_img img{
+  width: 150px;
+}
+
+.featured_boks .featured_book_box .featured_book_card .featurde_book_tag h2{
+  margin: 12px;
+}
+
+.featured_boks .featured_book_box .featured_book_card .featurde_book_tag .writer{
+  color: #919191;
+}
+
+.featured_boks .featured_book_box .featured_book_card .featurde_book_tag .categories{
+  color: #4465f7;
+  margin-top: 8px;
+}
+
+.featured_boks .featured_book_box .featured_book_card .featurde_book_tag .book_price{
+  margin-top: 8px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.featured_boks .featured_book_box .featured_book_card .featurde_book_tag .book_price sub{
+  font-weight: 100;
+  padding: 0 5px;
+}
+
+.featured_boks .featured_book_box .featured_book_card .featurde_book_tag .f_btn{
+  padding: 8px 20px;
+  border: 2px solid #089da1;
+  text-decoration: none;
+  color: #000;
+}
+
+::-webkit-scrollbar{
+  width: 10px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track{
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
+}
+
+::-webkit-scrollbar-thumb{
+  background: #4465f7;
+  border-radius: 10px;
+}
+
+/* css end for the recently viewed component */
+
+/* css for the accordion */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+.panel.show {
+  display: block;
+}
+/* end of css for the accordion */
+/* css code for the tabs */
+* {
+  box-sizing: border-box;
+}
+
+/* Set height of body and the document to 100% */
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Books {
+  background-color: white;
+  color: black;
+}
+
+#Videos {
+  background-color: white;
+  color: black;
+}
+
+
+/* end of codes for the tabs */
