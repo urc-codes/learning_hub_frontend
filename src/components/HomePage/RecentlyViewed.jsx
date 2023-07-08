@@ -13,7 +13,7 @@ export const RecentlyViewed = () => {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:5000/books/mobile_app")
+    axios.get("https://urclearninghubbackend.onrender.com/books/mobile_app")
     .then(response => setMobileAppBooks(response.data))
     .catch(err => console.log(err))
        setTimeout(() => {
