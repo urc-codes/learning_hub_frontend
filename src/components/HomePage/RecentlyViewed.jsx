@@ -6,6 +6,9 @@ export const RecentlyViewed = () => {
 
   const [isLoading, setIsLoading] = useState();
   const [data, setMobileAppBooks] = useState([]);
+  const [web_books, setWebBooks] = useState([]);
+  const [graphic_books, setGraphicBooks] = useState([]);
+  const [general_programming_books, setGeneralProgrammingBooks] = useState([]);
 
   const handleAccordionClick = (index) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
@@ -15,6 +18,30 @@ export const RecentlyViewed = () => {
   useEffect(() => {
     axios.get("https://urclearninghubbackend.onrender.com/books/mobile_app")
     .then(response => setMobileAppBooks(response.data))
+    .catch(err => console.log(err))
+       setTimeout(() => {
+            setIsLoading(false);
+          }, 2000); // Set the desired loading time in milliseconds
+    },[])
+  useEffect(() => {
+    axios.get("https://urclearninghubbackend.onrender.com/books/web_design")
+    .then(response => setWebBooks(response.data))
+    .catch(err => console.log(err))
+       setTimeout(() => {
+            setIsLoading(false);
+          }, 2000); // Set the desired loading time in milliseconds
+    },[])
+  useEffect(() => {
+    axios.get("https://urclearninghubbackend.onrender.com/books/graphic_design")
+    .then(response => setGraphicBooks(response.data))
+    .catch(err => console.log(err))
+       setTimeout(() => {
+            setIsLoading(false);
+          }, 2000); // Set the desired loading time in milliseconds
+    },[])
+  useEffect(() => {
+    axios.get("https://urclearninghubbackend.onrender.com/books/general_programming")
+    .then(response => setGeneralProgrammingBooks(response.data))
     .catch(err => console.log(err))
        setTimeout(() => {
             setIsLoading(false);
@@ -32,12 +59,37 @@ export const RecentlyViewed = () => {
             Graphic Designs
           </button>
           <div className={`panel ${activeIndex === 1 ? "show" : ""}`}>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
+          <div class="featured_book_box">
+              {isLoading ? (
+                <p style={{ color: "black" }}>Loading...</p>
+              ) : (
+                graphic_books.map((item) => (
+                  <div class="featured_book_card">
+                    <>
+                      <div class="featurde_book_img">
+                        {/* eslint-disable-next-line */}
+                        <img
+                          src={`https://drive.google.com/uc?id=${item.book_image_id}`}
+                        ></img>
+                      </div>
+                      <div class="featurde_book_tag">
+                        <h3>{item.book_titletitle}</h3>
+                        <p class="writer">{item.author_name}</p>
+                        <p>
+                          <a
+                            target="_blank"
+                            href={item.book_url}
+                            style={{ textDecoration: "none" }}
+                          >
+                            Read Book
+                          </a>
+                        </p>
+                      </div>
+                    </>
+                  </div>
+                ))
+              )}
+            </div>
           </div>
 
           <button
@@ -47,12 +99,37 @@ export const RecentlyViewed = () => {
             Web Design and Programming
           </button>
           <div className={`panel ${activeIndex === 2 ? "show" : ""}`}>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
+          <div class="featured_book_box">
+              {isLoading ? (
+                <p style={{ color: "black" }}>Loading...</p>
+              ) : (
+                web_books.map((item) => (
+                  <div class="featured_book_card">
+                    <>
+                      <div class="featurde_book_img">
+                        {/* eslint-disable-next-line */}
+                        <img
+                          src={`https://drive.google.com/uc?id=${item.book_image_id}`}
+                        ></img>
+                      </div>
+                      <div class="featurde_book_tag">
+                        <h3>{item.book_titletitle}</h3>
+                        <p class="writer">{item.author_name}</p>
+                        <p>
+                          <a
+                            target="_blank"
+                            href={item.book_url}
+                            style={{ textDecoration: "none" }}
+                          >
+                            Read Book
+                          </a>
+                        </p>
+                      </div>
+                    </>
+                  </div>
+                ))
+              )}
+            </div>
           </div>
 
           <button
@@ -101,12 +178,37 @@ export const RecentlyViewed = () => {
             General Programming
           </button>
           <div className={`panel ${activeIndex === 4 ? "show" : ""}`}>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
+          <div class="featured_book_box">
+              {isLoading ? (
+                <p style={{ color: "black" }}>Loading...</p>
+              ) : (
+                general_programming_books.map((item) => (
+                  <div class="featured_book_card">
+                    <>
+                      <div class="featurde_book_img">
+                        {/* eslint-disable-next-line */}
+                        <img
+                          src={`https://drive.google.com/uc?id=${item.book_image_id}`}
+                        ></img>
+                      </div>
+                      <div class="featurde_book_tag">
+                        <h3>{item.book_titletitle}</h3>
+                        <p class="writer">{item.author_name}</p>
+                        <p>
+                          <a
+                            target="_blank"
+                            href={item.book_url}
+                            style={{ textDecoration: "none" }}
+                          >
+                            Read Book
+                          </a>
+                        </p>
+                      </div>
+                    </>
+                  </div>
+                ))
+              )}
+            </div>
           </div>
         </div>
       </div>
