@@ -111,7 +111,7 @@ nav ul li.active{
     flex-direction: column;
   }
   .intro-texts{
-    height: 35vh;
+    height: max-content;
   }
   .d-model{
     height: 45vh;

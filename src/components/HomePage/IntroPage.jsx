@@ -22,9 +22,9 @@ export const IntroPage = () => {
                             </i>
                         </p>
                     </div>
-                    <div>
+                    {/* <div>
                         <button className='btn btn-primary'>Learn More</button>
-                    </div>
+                    </div> */}
                 </div>
                 <div className='col-md-6 d-model'>
                     <LibraryCanvas />
