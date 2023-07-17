@@ -59,22 +59,22 @@ export const RecentlyViewed = () => {
             Graphic Designs
           </button>
           <div className={`panel ${activeIndex === 1 ? "show" : ""}`}>
-          <div class="featured_book_box">
+          <div className="featured_book_box">
               {isLoading ? (
                 <p style={{ color: "black" }}>Loading...</p>
               ) : (
                 graphic_books.map((item) => (
-                  <div class="featured_book_card">
+                  <div className="featured_book_card">
                     <>
-                      <div class="featurde_book_img">
+                      <div className="featurde_book_img">
                         {/* eslint-disable-next-line */}
                         <img
                           src={`https://drive.google.com/uc?id=${item.book_image_id}`}
                         ></img>
                       </div>
-                      <div class="featurde_book_tag">
-                        <h3>{item.book_titletitle}</h3>
-                        <p class="writer">{item.author_name}</p>
+                      <div className="featurde_book_tag">
+                        <h3>{item.book_title}</h3>
+                        <p className="writer">{item.author_name}</p>
                         <p>
                           <a
                             target="_blank"
@@ -99,22 +99,22 @@ export const RecentlyViewed = () => {
             Web Design and Programming
           </button>
           <div className={`panel ${activeIndex === 2 ? "show" : ""}`}>
-          <div class="featured_book_box">
+          <div className="featured_book_box">
               {isLoading ? (
                 <p style={{ color: "black" }}>Loading...</p>
               ) : (
                 web_books.map((item) => (
-                  <div class="featured_book_card">
+                  <div className="featured_book_card">
                     <>
-                      <div class="featurde_book_img">
+                      <div className="featurde_book_img">
                         {/* eslint-disable-next-line */}
                         <img
                           src={`https://drive.google.com/uc?id=${item.book_image_id}`}
                         ></img>
                       </div>
-                      <div class="featurde_book_tag">
-                        <h3>{item.book_titletitle}</h3>
-                        <p class="writer">{item.author_name}</p>
+                      <div className="featurde_book_tag">
+                        <h3>{item.book_title}</h3>
+                        <p className="writer">{item.author_name}</p>
                         <p>
                           <a
                             target="_blank"
@@ -139,22 +139,22 @@ export const RecentlyViewed = () => {
             Mobile App Design
           </button>
           <div className={`panel ${activeIndex === 3 ? "show" : ""}`}>
-            <div class="featured_book_box">
+            <div className="featured_book_box">
               {isLoading ? (
                 <p style={{ color: "black" }}>Loading...</p>
               ) : (
                 data.map((item) => (
-                  <div class="featured_book_card">
+                  <div className="featured_book_card">
                     <>
-                      <div class="featurde_book_img">
+                      <div className="featurde_book_img">
                         {/* eslint-disable-next-line */}
                         <img
                           src={`https://drive.google.com/uc?id=${item.book_image_id}`}
                         ></img>
                       </div>
-                      <div class="featurde_book_tag">
-                        <h3>{item.book_titletitle}</h3>
-                        <p class="writer">{item.author_name}</p>
+                      <div className="featurde_book_tag">
+                        <h3>{item.book_title}</h3>
+                        <p className="writer">{item.author_name}</p>
                         <p>
                           <a
                             target="_blank"
@@ -178,22 +178,22 @@ export const RecentlyViewed = () => {
             General Programming
           </button>
           <div className={`panel ${activeIndex === 4 ? "show" : ""}`}>
-          <div class="featured_book_box">
+          <div className="featured_book_box">
               {isLoading ? (
                 <p style={{ color: "black" }}>Loading...</p>
               ) : (
                 general_programming_books.map((item) => (
-                  <div class="featured_book_card">
+                  <div className="featured_book_card">
                     <>
-                      <div class="featurde_book_img">
+                      <div className="featurde_book_img">
                         {/* eslint-disable-next-line */}
                         <img
                           src={`https://drive.google.com/uc?id=${item.book_image_id}`}
                         ></img>
                       </div>
-                      <div class="featurde_book_tag">
-                        <h3>{item.book_titletitle}</h3>
-                        <p class="writer">{item.author_name}</p>
+                      <div className="featurde_book_tag">
+                        <h3>{item.book_title}</h3>
+                        <p className="writer">{item.author_name}</p>
                         <p>
                           <a
                             target="_blank"
